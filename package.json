@@ -1,0 +1,16 @@
+{
+  "name": "monitoringsucks.no.de",
+  "description": "webui and upvotes for the monitoring sucks tracking repos",
+  "author": "flores <github@petalphile.com>",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "2.5.2",
+    "node-markdown": "latest",
+    "jade": "0.19.0"
+  },
+  "engine": "node >= 0.6"
+}
+
