@@ -1,16 +1,10 @@
-h1 Monitoring Sucks
-h2 tool-repos
-table
-  thead
-    tr
-      th project
-      th info
-      th git
-    tbody
-      - each key,value in repos
-        tr
-          td #{value}
-          td= md(key["readme"])
-          td #{key["git"]}
+h1 Monitoring Sucks tool-repos
 
+- each key,value in repos
+  #entry
+    #default
+      #project
+        a(href="#", onClick='toggle("#{value}_desc")') #{value}
+    #desc(id="#{value}_desc", style="display:none")!= md(key["readme"])
+      a(href="#{key['git']}") git
 h3 pie

@@ -1,7 +1,3 @@
-var util = require('util'),
-    exec = require('child_process').exec,
-    child;
-
 var app = require('express').createServer();
 app.register('.html', require('jade'));
 var md = require("node-markdown").Markdown;

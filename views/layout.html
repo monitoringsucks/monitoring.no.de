@@ -2,6 +2,22 @@
 html
   head
     title = "Monitoring Sucks"
+    style(type='text/css')
+      * {
+      }
+      #project {
+        font-size: 1.2em;
+      }
+      #desc {
+        font-size: 0.8em;
+      }
+    script(type='text/javascript')
+      function toggle(somediv) {
+        if ( document.getElementById(somediv).style.display == 'none' ) {
+          document.getElementById(somediv).style.display = 'block';
+        } else {
+          document.getElementById(somediv).style.display = 'none';
+        };
+      }
   body
-    center
-      != body
+    != body
