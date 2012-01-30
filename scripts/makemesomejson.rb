@@ -8,15 +8,17 @@ require 'json'
 data = Hash.new
 
 # find is faster than like everything
-repos = `find tool-repos -iname 'readme*'`;
+repos = `find ~/hub/tool-repos -iname 'readme*'`;
 
 repos.split("\n").each do |r|
   p = r.split('/')
-  name = p[1]
-  git = File.file?("tool-repos/#{name}/repo")
+  name = p[5]
+  git = `grep -A2 "#{name}/repo" ~/hub/tool-repos/.gitmodules |awk '/url/ {print $3}'`.strip
+
+  readme = File.open(r, "r").read
 
   data[name] = {
-    "readme" => r, 
+    "readme" => readme, 
     "git" => git
   }
 end

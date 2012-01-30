@@ -1,0 +1,16 @@
+h1 Monitoring Sucks
+h2 tool-repos
+table
+  thead
+    tr
+      th project
+      th info
+      th git
+    tbody
+      - each key,value in repos
+        tr
+          td #{value}
+          td= md(key["readme"])
+          td #{key["git"]}
+
+h3 pie

@@ -4,19 +4,12 @@ var util = require('util'),
 
 var app = require('express').createServer();
 app.register('.html', require('jade'));
+var md = require("node-markdown").Markdown;
 
-var repos = [];
-repos = exec('find /root/monitoringsucks/ -iname "readme*"', function(err, stdout, stderr) {
-  var file_list = [];
-  file_list = stdout.split("\n");
-  return file_list;
-  /* now you've got a list with full path file names */
-});
+var repos = require('./tool-repos.json');
 
 app.get('/', function(req, res){
-  var file_list = [];
-  file_list = repos;
-  res.send('pie');
+  res.render('index.html', { repos: repos.data, md: md })
 });
 
 app.listen(process.env.PORT || 8001);
