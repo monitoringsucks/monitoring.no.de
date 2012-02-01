@@ -2,10 +2,11 @@ var app = require('express').createServer();
 app.register('.html', require('jade'));
 var md = require("node-markdown").Markdown;
 
-var repos = require('./tool-repos.json');
+var toolrepos = require('./tool-repos.json');
+var loadtestingrepos = require('./loadtesting-repos.json');
 
 app.get('/', function(req, res){
-  res.render('index.html', { repos: repos.data, md: md })
+  res.render('index.html', { toolrepos: toolrepos.data, loadtestingrepos: loadtestingrepos.data, md: md })
 });
 
 app.listen(process.env.PORT || 8001);
