@@ -4,12 +4,37 @@ html
     title = "Monitoring Sucks"
     style(type='text/css')
       * {
+        line-height: 1.3;
+      }
+      h1,h2 {
+        text-align: center;
+      }
+      #entry {
+        max-width:70%;
+        padding: auto;
+        margin-right: auto;
+        margin-left: auto;
       }
       #project {
-        font-size: 1.2em;
+        text-align: center;
+        font-size: 1.6em;
+        padding: 3;
       }
-      #desc {
-        font-size: 0.8em;
+      #blogs {
+        text-align: center;
+        font-size: 1.2em;
+        padding: 5 5 5 10;
+      }
+      #blog {
+        text-align: center;
+        font-size: 1.2em;
+        padding: 5 5 5 1em;
+      }
+      ul { list-style-type: none; }
+      *[id*='desc'] {
+        text-align: center;
+        font-size: 1em;
+        padding: auto;
       }
     script(type='text/javascript')
       function toggle(somediv) {
@@ -20,4 +45,5 @@ html
         };
       }
   body
+    <a href="http://github.com/monitoringsucks"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/7afbc8b248c68eb468279e8c17986ad46549fb71/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub"></a> 
     != body

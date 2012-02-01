@@ -1,10 +1,51 @@
-h1 Monitoring Sucks tool-repos
+h1 Monitoring Sucks
 
-- each key,value in repos
-  #entry
-    #default
-      #project
-        a(href="#", onClick='toggle("#{value}_desc")') #{value}
-    #desc(id="#{value}_desc", style="display:none")!= md(key["readme"])
-      a(href="#{key['git']}") git
-h3 pie
+h2
+  a(href="javascript:void(0)", onClick='toggle("blogs"); return false') blog posts
+#blogs(id="blogs")
+  #blog
+    a(href='http://theoryandlogic.com/post/5890089120/the-ideal-monitoring-service', target='_blank') The Ideal Monitoring Service
+  #blog
+    a(href='http://conigliaro.org/2011/05/31/monitoring-as-code/', target='_blank') Monitoring as Code
+  #blog
+    a(href='http://www.devco.net/archives/tag/unimatrix', target='_blank') Interact with munin-node from Ruby
+  #blog
+    a(href='http://vuksan.com/blog/2011/06/05/monitoring-links-and-monitoring-anti-pattern-video', target='_blank') Monitoring Links and Monitoring Anti-Pattern Video
+  #blog
+    a(href='http://holmwood.id.au/~lindsay/2009/11/09/behaviour-driven-infrastructure-through-cucumber/', target='_blank') Behaviour Driven Infrastructure Through Cucumber
+  #blog
+    a(href='http://www.semicomplete.com/blog/geekery/rspec-for-nagios-monitoring.html', target='_blank') RSpec for Nagios Monitoring
+  #blog
+    a(href='http://lusislog.blogspot.com/2011/06/why-monitoring-sucks.html', target='_blank') Why Monitoring Sucks
+  #blog
+    a(href='http://obfuscurity.com/2011/07/Monitoring-Sucks-Do-Something-About-It', target='_blank') Monitoring Sucks. Do Something About It.
+  #blog
+    a(href='http://obfuscurity.com/2011/07/Robots-Are-Cool-and-Shit-But-Seriously', target='_blank') Giant Robots Are Cool And Shit, But Seriously...
+  #blog
+    a(href='http://leastresistance.wordpress.com/2011/07/12/monitoringsucks-terminology-first-stab/', target='_blank') MonitoringSucks Terminology (first stab)
+  #blog
+    a(href='http://lusislog.blogspot.com/2011/07/monitoring-sucks-watch-your-language.html', target='_blank') Monitoring Sucks - Watch your language
+
+h2
+  a(href="javascript:void(0)", onClick='toggle("tool_repos"); return false') tool-repos
+#tools(id="tool_repos", style="display:none")
+  - each key,value in toolrepos
+    #entry
+      #default
+        #project
+          a(href="javascript:void(0)", onClick='toggle("#{value}_desc"); return false;') #{value}
+      #desc(id="#{value}_desc", style="display:none")!= md(key["readme"])
+        p(align="center")
+          a(href="#{key['git']}") git clone
+
+h2
+  a(href="javascript:void(0)", onClick='toggle("loadtesting_repos"); return false') loadtesting-repos
+#loadtesting(id="loadtesting_repos", style="display:none")
+  - each key,value in loadtestingrepos
+    #entry
+      #default
+        #project
+          a(href="javascript:void(0)", onClick='toggle("#{value}_desc"); return false;') #{value}
+      #desc(id="#{value}_desc", style="display:none")!= md(key["readme"])
+        p(align="center")
+          a(href="#{key['git']}") git clone
